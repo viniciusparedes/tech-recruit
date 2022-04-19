@@ -1,5 +1,5 @@
 <template>
-  <v-app class="app-main">
+  <v-app class="app-main" :style="{backgroundImage: 'url(' + require('@/assets/estrelas.png') + '), url(' + require('@/assets/nebulosa_nova.png') + ')'}">
     <AppBar/>
     <v-main>
       <RecruitMain/>
