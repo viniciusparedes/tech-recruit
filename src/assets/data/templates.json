@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Back-End"
+    },
+    {
+        "name": "Front-End"
+    },
+    {
+        "name": "Quality Analist"
+    },
+    {
+        "name": "Designer"
+    },
+    {
+        "name": "Agilist"
+    },
+    {
+        "name": "DevOps/SRE"
+    },
+    {
+        "name": "Product Owner"
+    },
+    {
+        "name": "Android Nativo"
+    },
+    {
+        "name": "iOS Nativo"
+    },
+    {
+        "name": "Flutter"
+    },
+    {
+        "name": "React Native"
+    }
+]
