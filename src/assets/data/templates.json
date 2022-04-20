@@ -1,35 +1,65 @@
 [
     {
-        "name": "Back-End"
+        "name": "Back-End",
+        "subjects": [
+            {
+                "name": "Linguagens de Programação",
+                "items": [
+                    "Python", "Java", "PHP", "JavaScript", "C#"
+                ]
+            },
+            {
+                "name": "Arquitetura de Software",
+                "items": [
+                    "MVC", "Fábrica de Métodos", "SOLID"
+                ]
+            }
+        ]
     },
     {
-        "name": "Front-End"
+        "name": "Front-End",
+        "text":  "texto End",
+        "subjects": [
+            {
+                "name": "Frameworks",
+                "items": ["Vue", "Angular", "React"]
+            }
+        ]
     },
     {
-        "name": "Quality Analist"
+        "name": "Quality Analist",
+        "text":  "texto Analist"
     },
     {
-        "name": "Designer"
+        "name": "Designer",
+        "text":  "texto Designer"
     },
     {
-        "name": "Agilist"
+        "name": "Agilist",
+        "text":  "texto Agilist"
     },
     {
-        "name": "DevOps/SRE"
+        "name": "DevOps/SRE",
+        "text":  "texto SRE"
     },
     {
-        "name": "Product Owner"
+        "name": "Product Owner",
+        "text":  "texto Owner"
     },
     {
-        "name": "Android Nativo"
+        "name": "Android Nativo",
+        "text":  "texto Nativo"
     },
     {
-        "name": "iOS Nativo"
+        "name": "iOS Nativo",
+        "text":  "texto Nativo"
     },
     {
-        "name": "Flutter"
+        "name": "Flutter",
+        "text":  "texto Flutter"
     },
     {
-        "name": "React Native"
+        "name": "React Native",
+        "text":  "texto Native"
     }
 ]

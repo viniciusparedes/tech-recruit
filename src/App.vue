@@ -13,7 +13,6 @@ import AppBar from './components/App-Bar';
 
 export default {
   name: 'App',
-
   components: {
     AppBar, RecruitMain
   },
@@ -21,6 +20,9 @@ export default {
   data: () => ({
     //
   }),
+  created() {
+    document.title = "Invillia Tech-Recruit"
+  }
 };
 </script>
 
