@@ -1,17 +1,157 @@
 [
     {
         "name": "Back-End",
+        "text": "Ficha de Avaliação de Hard Skills Back-End",
         "subjects": [
             {
-                "name": "Linguagens de Programação",
+                "name": "Estrutura de Dados e Algoritmos",
                 "items": [
-                    "Python", "Java", "PHP", "JavaScript", "C#"
+                    {
+                        "name": "Estruturas de Dados",
+                        "examples": ["Lista", "Pilha", "Fila", "Recursão", "Ordenação", "Matriz"]
+                    }
                 ]
             },
             {
-                "name": "Arquitetura de Software",
+                "name": "Linguagens de Programação e Frameworks Web",
                 "items": [
-                    "MVC", "Fábrica de Métodos", "SOLID"
+                    {
+                        "name": "Linguagens de Programação",
+                        "examples": ["Python", "Java", "PHP", "JavaScript", "C#", "TypeScript"]
+                    },
+                    {
+                        "name": "Frameworks",
+                        "examples": ["Spring", ".NETCore", "Django", "Laravel", "React", "Angular"]
+                    },
+                    {
+                        "name": "Observabilidade",
+                        "examples": ["Distribuído", "Centralizado", "Boas práticas"]
+                    },
+                    {
+                        "name": "Controle de Versão",
+                        "examples": ["GIT", "SVN"]
+                    },
+                    {
+                        "name": "Front-End",
+                        "examples": ["Frameworks Full-Stack", "React", "Angular", "Vue"]
+                    }
+                ]
+            },
+            {
+                "name": "Princípios de Design",
+                "items": [
+                    {
+                        "name": "Boas práticas e padronizações",
+                        "examples": ["Clean Code", "SOLID", "Yagni", "KISS"]
+                    },
+                    {
+                        "name": "Padrões de Degign",
+                        "examples": ["Singleton", "Builder", "Adapter", "Factory"]
+                    }
+
+                ]
+            },
+            {
+                "name": "Persistência de Dados",
+                "items": [
+                    {
+                        "name": "Armazenagem de Dados",
+                        "examples": ["Bancos Relacionais", "Bancos NOSQL", "Armazenamento em Memória"]
+                    }
+                ]
+            },
+            {
+                "name": "REST e GraphQL",
+                "items": [
+                    {
+                        "name": "API's",
+                        "examples": ["RESTful", "Status", "Versionamento", "JSON", "SOAP", "GraphQL"]
+                    },
+                    {
+                        "name": "Comunicação entre Sistemas",
+                        "examples": ["Comunicação Front-End com Back-End"]
+                    }
+                ]
+            },
+            {
+                "name": "Testes Automatizados",
+                "items": [
+                    {
+                        "name": "Performance",
+                        "examples": ["Sync vs Async", "Complexidade de Algoritmo"]
+                    },
+                    {
+                        "name": "Teste",
+                        "examples": ["Unitário", "Integração", "Fim a Fim", "Stress"]
+                    }
+                ]
+            },
+            {
+                "name": "Estilos Arquiteturais, Microsserviços e Mensageria",
+                "items": [
+                    {
+                        "name": "Projeto",
+                        "examples": ["Definição", "Criação", "Manutenção", "Evolução"]
+                    },
+                    {
+                        "name": "Arquitetura",
+                        "examples": ["Monolito", "MVC", "MVVM", "DDD"]
+                    },
+                    {
+                        "name": "Arquitetura Distribuída",
+                        "examples": ["Microsserviço", "CORS"]
+                    },
+                    {
+                        "name": "Mensageria/Fila",
+                        "examples": ["Kafka", "RabbitMQ", "Eventos", "Mensagens", "Publish", "Subscribe"]
+                    },
+                    {
+                        "name": "Cache",
+                        "examples": ["Ferramentas de Uso"]
+                    }
+                ]
+            },
+            {
+                "name": "Técnicas de Negociação e Argumentação",
+                "items": [
+                    {
+                        "name": "Análise de Sistemas",
+                        "examples": ["Estimativas", "Requisitos", "Quebrar Histórias"]
+                    },
+                    {
+                        "name": "Qualidade",
+                        "examples": ["Bugs", "Refatoração", "Sonar", "Code-Review", "Pair-Programming"]
+                    }
+                ]
+            },
+            {
+                "name": "Técnicas de Desenvolvimento Seguro",
+                "items": [
+                    {
+                        "name": "Segurança",
+                        "examples": ["Autenticação", "Autorização", "Criptografia"]
+                    }
+                ]
+            },
+            {
+                "name": "Cloud Computing",
+                "items": [
+                    {
+                        "name": "Containers",
+                        "examples": ["Docker"]
+                    },
+                    {
+                        "name": "Nuvem",
+                        "examples": ["Azure", "AWS", "GCP"]
+                    },
+                    {
+                        "name": "DevOps/SRE",
+                        "examples": ["CI/CD", "Jenkins", "Dynatrace", "Rollback"]
+                    },
+                    {
+                        "name": "Automação/Jobs",
+                        "examples": ["Azure Functions", "Quartz", "Cron", "Lambda"]
+                    }
                 ]
             }
         ]
