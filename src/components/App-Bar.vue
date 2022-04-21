@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="#311452" elevation=0 flat=true>
+  <v-app-bar app color="transparent" elevation=0 flat=true>
     <v-row>
       <v-col cols="1">
         <v-img

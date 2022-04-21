@@ -1,5 +1,11 @@
 <template>
-  <v-app class="app-main" :style="{backgroundImage: 'url(' + require('@/assets/estrelas.png') + '), url(' + require('@/assets/nebulosa_nova.png') + ')'}">
+  <v-app class="app-main" :style="{backgroundImage:
+        'url(' + require('@/assets/estrelas.png') + '), ' +
+        'url(' + require('@/assets/nebulosa_nova.png') + '), ' +
+        'url(' + require('@/assets/bg.png') + ')',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
+        }">
     <AppBar/>
     <v-main>
       <RecruitMain/>
@@ -22,6 +28,7 @@ export default {
   }),
   created() {
     document.title = "Invillia Tech-Recruit"
+    document.documentElement.style.overflow = 'hidden'
   }
 };
 </script>

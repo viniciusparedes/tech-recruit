@@ -45,7 +45,7 @@
                         "examples": ["Clean Code", "SOLID", "Yagni", "KISS"]
                     },
                     {
-                        "name": "Padrões de Degign",
+                        "name": "Padrões de Design",
                         "examples": ["Singleton", "Builder", "Adapter", "Factory"]
                     }
 
