@@ -60,8 +60,8 @@
                         </v-btn-toggle>
                       </v-col>
                       <v-col md="10">
+<!--                          :style="{display: templates[t].subjects[s].score !== null ? 'none' : 'inline'}"-->
                         <v-textarea outlined label="Justificativa"
-                          :style="{display: templates[t].subjects[s].score !== null ? 'none' : 'inline'}"
                           v-model="templates[t].subjects[s].justify"
                         ></v-textarea>
                       </v-col>
@@ -69,6 +69,11 @@
                   </v-expansion-panel-content>
                 </v-expansion-panel>
               </v-expansion-panels>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col class="text-center">
+                  <ExportDialog />
                 </v-col>
               </v-row>
             </v-tab-item>
@@ -80,15 +85,17 @@
 </template>
 
 <script>
-import templates from '@/assets/data/templates.json'
+import templates from '@/assets/data/templates.json';
+import ExportDialog from './Export-Dialog';
 
 export default {
   name: 'RecruitMain',
+  components: {ExportDialog},
 
   data: () => ({
     tab: null,
     templates: templates,
-    template_active: null
+    template_active: null,
   }),
   created() {
     templates.forEach((template, t)=>{
