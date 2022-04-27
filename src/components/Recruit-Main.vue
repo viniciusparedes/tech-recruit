@@ -73,7 +73,7 @@
               </v-row>
               <v-row>
                 <v-col class="text-center">
-                  <ExportDialog />
+                  <ExportDialog v-bind:template="template" />
                 </v-col>
               </v-row>
             </v-tab-item>

@@ -246,14 +246,33 @@
         <v-spacer></v-spacer>
         <v-btn color="secondary darken-1" text @click="dialog = false">Cancelar</v-btn>
         <v-btn color="primary darken-1" text @click="dialog = false">Exportar</v-btn>
+        <a download="test.xlsx" href="#" @click="download()">Export to XLSX</a>
+        <div style="display:hidden">
+          <table id="datatable">
+              <tr>
+                  <td style="border: 1px solid red" v-html="dados.name"></td> <td>200</td> <td>300</td>
+              </tr>
+              <tr>
+                  <td>400</td> <td>500</td> <td>600</td>
+              </tr>
+          </table>
+        </div>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
 <script>
+import ExcellentExport from 'excellentexport'
+
 export default {
   name: 'ExportDialog',
+  props: {
+    template: {
+      type: Object,
+      required: true
+    }
+  },
 
   data: () => ({
     tab: null,
@@ -292,7 +311,41 @@ export default {
     }
   }),
 
+  computed: {
+    dados: function(){
+      return {
+        ...this.template,
+        dados_do_candidato: this.dados_do_candidato,
+        habilidades_especificas: this.habilidades_especificas,
+        observacoes: this.observacoes,
+        avaliacao: this.avaliacao,
+        recomendacoes: this.recomendacoes
+      }
+    },
+    excel_sheetname: function(){
+      return `Ficha de Avaliação ${this.template.name}`
+    },
+    excel_filename: function(){
+      return `Avaliacao - ${this.dados_do_candidato.nome_do_candidato}`
+    }
+  },
+
   methods: {
+    download: function(){
+      return ExcellentExport.convert(
+        { 
+          anchor: document, 
+          filename: 'test', 
+          format: 'xlsx'
+        },
+        [
+          {
+            name: 'Sheet Name Here 1', 
+            from: {table: document.getElementById('datatable')}
+          }
+        ]
+      );
+    },
     add_habilidade: function(){
       let hab = this.habilidades_especificas_form
       delete hab.show

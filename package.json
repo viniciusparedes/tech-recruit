@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "excellentexport": "^3.8.0",
     "vue": "^2.6.14",
-    "vue-excel-xlsx": "^1.2.2",
     "vuetify": "^2.6.0"
   },
   "devDependencies": {
