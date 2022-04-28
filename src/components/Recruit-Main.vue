@@ -62,7 +62,7 @@
                       <v-col md="10">
 <!--                          :style="{display: templates[t].subjects[s].score !== null ? 'none' : 'inline'}"-->
                         <v-textarea outlined label="Justificativa"
-                          v-model="templates[t].subjects[s].justify"
+                          v-model="templates[t].subjects[s].justification"
                         ></v-textarea>
                       </v-col>
                     </v-row>
@@ -73,7 +73,8 @@
               </v-row>
               <v-row>
                 <v-col class="text-center">
-                  <ExportDialog v-bind:template="template" />
+                  <finish-dialog v-bind:template="template" />
+                  <export-table v-bind:dados="dados_export" v-bind:dialog="table_dialog" />
                 </v-col>
               </v-row>
             </v-tab-item>
@@ -86,30 +87,45 @@
 
 <script>
 import templates from '@/assets/data/templates.json';
-import ExportDialog from './Export-Dialog';
+import FinishDialog from './Finish-Dialog.vue';
+import ExportTable from './Export-Table.vue';
 
 export default {
+  components: { FinishDialog, ExportTable },
   name: 'RecruitMain',
-  components: {ExportDialog},
 
   data: () => ({
     tab: null,
     templates: templates,
     template_active: null,
+    dados_export: null,
+    table_dialog: false
   }),
   created() {
     templates.forEach((template, t)=>{
       this.templates[t]["slug"] = this.build_slug(template)
       templates[t].subjects.forEach((subject, s)=>{
         this.templates[t].subjects[s]["score"] = null
-        this.templates[t].subjects[s]["justify"] = null
+        this.templates[t].subjects[s]["justification"] = null
         templates[t].subjects[t].items.forEach((item, i)=>{
           this.templates[t].subjects[s].items[i]["stars"] = 0
         })
       })
     })
   },
+  mounted() {
+    this.$root.$on('export', dados=>{
+      console.log(dados)
+      this.dados_export = dados
+      this.handle_table_dialog(true)
+    })
+    this.$root.$on('close-table', ()=>{this.table_dialog=false})
+  },
   methods: {
+    handle_table_dialog(state){
+      this.table_dialog = state
+      this.$root.$emit('change-table-dialog', this.table_dialog)
+    },
     build_slug(template){
       return template.name
           .toLowerCase()
@@ -118,6 +134,10 @@ export default {
           .replace(/[\s_-]+/g, '-')
           .replace(/^-+|-+$/g, '')
     }
+  },
+  beforeDestroy(){
+    this.$root.$off('export')
+    this.$root.$off('close-table')
   }
 }
 </script>

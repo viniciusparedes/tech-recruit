@@ -5,7 +5,7 @@
   >
     <template v-slot:activator="{ on, attrs }">
       <v-btn x-large color="primary" dark v-bind="attrs" v-on="on">Concluir</v-btn>
-    </template>
+    </template> bg 
     <v-card class="dialog-content">
       <v-btn class="mx-2 close-btn" icon fab small @click="dialog=false">
         <v-icon dark>mdi-close</v-icon>
@@ -245,28 +245,16 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn color="secondary darken-1" text @click="dialog = false">Cancelar</v-btn>
-        <v-btn color="primary darken-1" text @click="dialog = false">Exportar</v-btn>
-        <a download="test.xlsx" href="#" @click="download()">Export to XLSX</a>
-        <div style="display:hidden">
-          <table id="datatable">
-              <tr>
-                  <td style="border: 1px solid red" v-html="dados.name"></td> <td>200</td> <td>300</td>
-              </tr>
-              <tr>
-                  <td>400</td> <td>500</td> <td>600</td>
-              </tr>
-          </table>
-        </div>
+        <v-btn color="primary darken-1" text @click="exportar()">Exportar</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
 <script>
-import ExcellentExport from 'excellentexport'
 
 export default {
-  name: 'ExportDialog',
+  name: "FinishDialog",
   props: {
     template: {
       type: Object,
@@ -319,7 +307,8 @@ export default {
         habilidades_especificas: this.habilidades_especificas,
         observacoes: this.observacoes,
         avaliacao: this.avaliacao,
-        recomendacoes: this.recomendacoes
+        recomendacoes: this.recomendacoes,
+        avaliador: this.avaliador
       }
     },
     excel_sheetname: function(){
@@ -331,20 +320,9 @@ export default {
   },
 
   methods: {
-    download: function(){
-      return ExcellentExport.convert(
-        { 
-          anchor: document, 
-          filename: 'test', 
-          format: 'xlsx'
-        },
-        [
-          {
-            name: 'Sheet Name Here 1', 
-            from: {table: document.getElementById('datatable')}
-          }
-        ]
-      );
+    exportar: function(){
+      this.dialog = false
+      this.$root.$emit('export', this.dados);
     },
     add_habilidade: function(){
       let hab = this.habilidades_especificas_form
